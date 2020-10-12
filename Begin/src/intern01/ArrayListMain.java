@@ -119,6 +119,8 @@ public class ArrayListMain {
 		list.add(0,40);
 		list.add(3,50); 
 		list.add(110);
+		list.add(50);
+		System.out.println(list);
 		list.removeAll(newList); 
 		System.out.println(list);
 		/*
