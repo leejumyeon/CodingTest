@@ -19,29 +19,19 @@ public class SortExam03 {
         sc.close();
 
         wordArr = quickSort(wordArr, 0, wordCnt - 1); // 글자수 정렬
-
-        System.out.println("문자 수 정렬-----------------");
-        for (int t = 0; t < wordCnt; t++) {
-            System.out.print(wordArr[t]+"\t");
-        }
-        System.out.println();
         
-        for (int i = 0; i < wordCnt - 1; i++) {
+        for (int i = 0; i < wordCnt - 1; i++) {// 0부터 마지막의 바로 앞까지 반복
             String temp="";
-            for (int j = i + 1; j < wordCnt; j++) {
+            for (int j = i + 1; j < wordCnt; j++) {// 위의 시작지점 다음부터 끝까지의 반복
                 if (wordArr[i].length() == wordArr[j].length()) { //글자수가 같다면
-                	if(wordArr[i].equals(wordArr[j])) {
-                		System.arraycopy(wordArr, j+1, wordArr, j, wordCnt-j);
+                	if(wordArr[i].equals(wordArr[j])) { //완전히 동일한 단어일 경우 
+                		System.arraycopy(wordArr, j+1, wordArr, j, wordCnt-j); //1개는 삭제 시킨다.
                 		j--;
                 		wordCnt--;
-                		for (int t = 0; t < wordCnt; t++) {
-                            System.out.print(wordArr[t]+"\t");
-                        }
-                        System.out.println();
                 		continue;
                 	}
                 	int k=0;
-                	boolean actFlag = false;
+                	boolean actFlag = false; //위치변환 과정이 끝났는지 확인하는 용도의 변수
                     do {
                     	if (wordArr[i].charAt(k) > wordArr[j].charAt(k)) {//i위치의 k번째 단어값이 j위치의 k번째 단어값보다 크면 i와 j의 위치 이동
                             temp = wordArr[j];
@@ -49,7 +39,7 @@ public class SortExam03 {
                             wordArr[i] = temp;
                             actFlag = true;
                         }
-                    	else if(wordArr[i].charAt(k) < wordArr[j].charAt(k)) {
+                    	else if(wordArr[i].charAt(k) < wordArr[j].charAt(k)) {//위치변환이 필요없으니 actFlag를 true로 하여 확인검사 종료시키기
                     	    actFlag = true;
                     	}
                     	k++;

@@ -7,7 +7,7 @@ public class HeapSortMain {
         int[] heap = { 7, 6, 5, 8, 3, 5, 9, 1, 6 };
         int number = heap.length;
 
-        // heap생성 과정
+        //최초 heap생성 과정
         for (int i = 0; i < number; i++) {
             int c = i; // 현재 노드
             do {
@@ -31,7 +31,7 @@ public class HeapSortMain {
 
             int c = 1;
             int root = 0; // 부모노드
-            do { // 힙 생성과정??
+            do { // 정렬 후 heap생성 과정
                 c = 2 * root + 1; // 자식노드 index
                 if (c < (i - 1) && heap[c] < heap[c + 1]) { // 이미 정해진 뒷자리를 제외한 나머지 부분에서 자식노드 2개 중 큰 값의 자식노드 선택
                     c++;
