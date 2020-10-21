@@ -10,11 +10,13 @@ public class Graph {
     private LinkedList<Integer> adj[]; //인접 리스트
     
     // 생성자
-    Graph(int v){
+    @SuppressWarnings("unchecked")
+    
+    public Graph(int v){
         V = v;
         adj = new LinkedList[v];
         for(int i=0; i<v; i++) { //인접 리스트 초기화
-            adj[i] = new LinkedList();
+            adj[i] = new LinkedList<Integer>();
         }
     }
     

@@ -22,7 +22,7 @@ public class SortExam03 {
         
         for (int i = 0; i < wordCnt - 1; i++) {// 0부터 마지막의 바로 앞까지 반복
             String temp="";
-            for (int j = i + 1; j < wordCnt; j++) {// 위의 시작지점 다음부터 끝까지의 반복
+            for(int j=i+1; j<wordCnt; j++) {
                 if (wordArr[i].length() == wordArr[j].length()) { //글자수가 같다면
                 	if(wordArr[i].equals(wordArr[j])) { //완전히 동일한 단어일 경우 
                 		System.arraycopy(wordArr, j+1, wordArr, j, wordCnt-j); //1개는 삭제 시킨다.
@@ -44,7 +44,7 @@ public class SortExam03 {
                     	}
                     	k++;
                     }while(!(actFlag || k>=wordArr[i].length()));
-					
+    				
                 }
             }
         }
