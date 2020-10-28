@@ -19,6 +19,7 @@ public class BaekJoon02 {
             System.out.println(position[i]);
         }
         System.out.println(result);
+        System.out.println((char)0);
     }
 
 }
