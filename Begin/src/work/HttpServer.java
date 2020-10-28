@@ -34,7 +34,7 @@ public class HttpServer {
 
 class HttpThread implements Runnable {
     private Socket socket;
-    private static final String BASE_DIR = "C:/Users/CREWMATE/git/ojt2020/2wnaud/";
+    private static final String BASE_DIR = "C:/Users/CREWMATE/git/CodingTest/Begin";
     HttpThread(Socket socket) {
         this.socket = socket;
     }

@@ -22,7 +22,7 @@ public class DijkstraMain {
     
     public static void main(String[] args) {
         // 다익스트라(dijkstra) 알고리즘
-        dijkstra(0);
+        dijkstra(2);
         for(int i=0; i<number; i++) {
             System.out.print(distance[i]+"\t");
         }
@@ -30,11 +30,12 @@ public class DijkstraMain {
     }
     
     private static void dijkstra(int start) {
+        // 결과값 distance를 전체 그래프에서 구하고자 하는 노드부터 출발하는 비용으로 초기화
         for(int i=0; i<number; i++) {
             distance[i] = a[start][i];
         }
-        v[start] = true;
-        for(int i=0; i<number-2; i++) {
+        v[start] = true; //자기자신 방문으로 처리
+        for(int i=0; i<number-2; i++) { // 첫 노드(시작노드)와 마지막 노드를 확인하지 않아도되니까 -2만큼 반복횟수를 빼준다.
             int current = getSmallIndex();
             v[current] = true;
             for(int j=0; j<number; j++) {
@@ -47,9 +48,10 @@ public class DijkstraMain {
         }
     }
     
+    // 가장 최소거리를 가지는 정점을 반환
     private static int getSmallIndex() {
-        int min = INF;
-        int index = 0;
+        int min = INF; //최소비용의 최대값으로 초기화
+        int index = 0; //노드번호
         for(int i=0; i<number; i++) {
             if(distance[i] < min && !v[i]) {
                 min = distance[i];
