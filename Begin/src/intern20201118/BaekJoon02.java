@@ -1,4 +1,4 @@
-package intern201118;
+package intern20201118;
 
 import java.util.Scanner;
 
